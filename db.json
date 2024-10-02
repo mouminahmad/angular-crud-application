@@ -1,0 +1,30 @@
+{
+  "users": [
+    {
+      "id": "9bb8",
+      "department": "Managmant",
+      "name": "Moumin Ahmad",
+      "mobile": "03047137478",
+      "email": "mouminahmad.pk@gmail.com",
+      "gender": "male",
+      "doj": "2024-10-04",
+      "city": "Lahore",
+      "salary": "200000",
+      "address": "lahore",
+      "status": true
+    },
+    {
+      "id": "f07b",
+      "department": "HR",
+      "name": "talha",
+      "mobile": "94894884",
+      "email": "moumin@gmail.com",
+      "gender": "male",
+      "doj": "2024-10-18",
+      "city": "Karachi",
+      "salary": "8333333333333",
+      "address": "8383838",
+      "status": true
+    }
+  ]
+}
