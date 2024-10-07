@@ -3,12 +3,12 @@ import { UserModel } from '../../model/user';
 import { FormsModule, NgForm } from '@angular/forms';
 import { UserService } from '../../service/user.service';
 import { ToastrService } from 'ngx-toastr';
-
-
+import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,NgxPaginationModule,CommonModule],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css'
 })
@@ -17,8 +17,9 @@ export class UserComponent implements OnInit {
   Department : string = '';
   Name : string = '';
   Gender : string = '';
-
-
+  items: any[] = [];
+  p :any;
+  
   userList : UserModel[] = [];
   editMode : boolean = false;
   user  : UserModel = {
@@ -40,6 +41,7 @@ export class UserComponent implements OnInit {
   ngOnInit() : void
   {
     this.getUserList();
+    this.getData();
   }
 
   cityList : string []  =  ["Lahore" , "Multan" , "Karachi" , "Sialkot", "Faislabad"];
@@ -74,9 +76,7 @@ export class UserComponent implements OnInit {
       });
     }
 
-
   }
-
 
   onDelete(id : any){
     const isConfirm  = confirm('Are you sure want to delete this user?');
@@ -98,4 +98,15 @@ export class UserComponent implements OnInit {
     this.editMode = false;
     this.getUserList();
   }
+
+  data:any =[];
+  getData(){
+    this._userService.getUsers().subscribe(
+      (data) => {
+        this.data =data;
+        console.log(this.data)
+      }
+    )
+  }
+
 }
