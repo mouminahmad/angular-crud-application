@@ -1,0 +1,17 @@
+.header {
+    background-color: #343a40;
+    color: #fff;
+    padding: 1rem;
+  }
+  .header h1 {
+    font-size: 1.75rem;
+  }
+  .footer {
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
