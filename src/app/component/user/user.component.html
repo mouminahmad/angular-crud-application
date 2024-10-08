@@ -1,74 +1,15 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-8">
             
-              
-              
-            <!-- USER LIST -->
-            <div class="card">
-                <div class="card-header bg-primary">
-                    <div class="row">
-                        <div class="col-6 text-white">
-                            <h6 class="p-2">User List</h6>
-                        </div>
-                        <div class="col-6 text-end">
-                            <button class="btn btn-info">Add User</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <table class="table table-bordered table-striped">
-                        <thead>
-                            <tr>
-                                <th>NO</th>
-                                <th>Department</th>
-                                <th>Name</th>
-                                <th>Gender</th>
-                                <th>Mobile</th>
-                                <th>Email</th>
-                                <th>DOJ</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- @for (item of userList; track $index )  { -->
-                            <tr *ngFor="let d of data | paginate: { itemsPerPage: 4, currentPage: p }">
-                                <td></td>
-                                <td> {{ d.department }} </td>
-                                <td> {{ d.name }} </td>
-                                <td>{{ d.gender }}</td>
-                                <td>{{ d.mobile }}</td>
-                                <td>{{ d.email }}</td>
-                                <td>{{ d.doj }}</td>
-                                <td>{{ d.status ? 'Active': 'InActive' }}</td>
-                                <td class="text-center">
-                                    <i class="fa fa-edit text-primary" (click)="onEdit(d)"></i> |
-                                    <i class="fa fa-trash text-danger" (click)="onDelete(d.id)"></i>
-                                </td>
-                            </tr>
-                            <!-- } -->
-
-                        </tbody>
-
-                    </table>
-                    
-                </div>
-            </div>
-
-           <!-- pagination -->
-           <pagination-controls (pageChange)="p = $event" class="float-right">
-           </pagination-controls>
-
-        <div class="col-4">
+        <div class="container">
             <!-- USER FORM -->
             <div class="card">
-                <div class="card-header bg-primary">
-                    <div class="row">
-                        <div class="col-6 text-white">
-                            <h6 class="p-2"> {{ editMode ? 'Update User ': 'Add User' }} </h6>
+                <div class="card-header ">
+                    <div class="card-heading">
+                        <div class="">
+                            <button class="btn btn-info" [routerLink]="['/display']">Back To List</button>
+                            >
                         </div>
-                        <div class="col-6 text-end">
+                        
+                        <div class=" ">
                             <button class="btn btn-info" (click)="onResetForm(userForm)">RESET</button>
                         </div>
                     </div>
@@ -137,8 +78,8 @@
                                 <label class="form-check-label"> Active ?</label>
                             </div>
                         </div>
-                        <div class="col-12">
-                            <button class="btn btn-primary w-100" type="submit"> {{ editMode ? 'Update': 'Save' }}
+                        <div class="btn ">
+                            <button class="btn  w-50 " type="submit"> {{ editMode ? 'Update': 'Save' }}
                             </button>
                         </div>
                     </form>
@@ -146,5 +87,3 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>

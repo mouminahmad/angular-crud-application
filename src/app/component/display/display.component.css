@@ -1,0 +1,36 @@
+body {
+  background-color: #f7f7f7;
+}
+
+.card {
+  margin-top: 20px;
+}
+.table th,
+.table td {
+  vertical-align: middle;
+}
+.btn-add {
+  background-color: #202A44;
+  border: none;
+}
+.btn-add:hover {
+  background-color: #202A44;
+}
+.pagination-controls {
+  margin-top: 1rem;
+  justify-content: center;
+  display: flex;
+}
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 1.25rem;
+  }
+}
+.card-header {
+    background-color:#343a40 ;
+}
+
+pagination-controls .current{
+    background-color: #202A44;
+}
+
