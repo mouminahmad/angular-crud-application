@@ -7,7 +7,7 @@ import { UserModel } from '../model/user';
   providedIn: 'root',
 })
 export class UserService {
-  private apiUrl = 'https://mouminahmad.github.io/angular_crud_json/db.json';
+  private apiUrl = 'http://localhost:3000/users';
   constructor() {}
 
   http = inject(HttpClient);
